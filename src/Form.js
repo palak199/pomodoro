@@ -1,8 +1,9 @@
 import React,{useState,useEffect} from 'react';
-import Scripts from './Scripts'
+
 function Form(props){
     const [time,setTime]=useState(0);
     function handleChange(e){
+        
         setTime(e.target.value);
         
         
@@ -15,13 +16,21 @@ function Form(props){
     
     }
 
-   
 
+    useEffect(() => {
+        // initiate the event handler
+        window.addEventListener("wheel", handleChange);
+    
+        // this will clean up the event every time the component is re-rendered
+        return function cleanup() {
+          window.removeEventListener("wheel", handleChange);
+        };
+      });
     return(
-    // <form onSubmit={handleSubmit}>
-    //     <input type="number" className="wheelable" style={{backgroundColor:"rgba(0, 0, 0, 0.0)"}} name="time" onChange={handleChange} ></input>
-    //     <button type="submit">go</button>
-    //    </form> 
+    <form onSubmit={handleSubmit}>
+        <input type="number" min="0" style={{backgroundColor:"rgba(0, 0, 0, 0.0)"}} name="time" onChange={handleChange} ></input>
+        <button className="sb" type="submit">set</button>
+       </form> 
     
     )
 }
