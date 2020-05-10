@@ -20,19 +20,29 @@ button{
   'Sacramento', cursive;
   background-color: #ff9800;
   border-style: solid;
-  border-color:white;
+  border-color:linear-gradient(135deg, #f2825b 0%,#e55b2b 50%,#f07146 100%);
   color:#bf360c;
   font-size: xx-large;
   font-weight: bolder;
 
 }
 input{
+  font-family: 
+  'Sacramento', cursive;
+  background-color:rgba(0, 0, 0, 0.0);
   height:40px;
-  color:white;
+  text-align:center;
+  border-color:#bf360c;
   border-left: none;
   border-right:none;
   border-top:none;
+  color:white;
+  font-weight: bolder;
 
+}
+input:focus{
+  background-color:rgba(0, 0, 0, 0.0);
+  border:none
 }
 .sb{
 height:40px;

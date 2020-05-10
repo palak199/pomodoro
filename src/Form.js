@@ -28,7 +28,7 @@ function Form(props){
       });
     return(
     <form onSubmit={handleSubmit}>
-        <input type="number" min="0" style={{backgroundColor:"rgba(0, 0, 0, 0.0)"}} name="time" onChange={handleChange} ></input>
+        <input type="number" min="0" name="time" onChange={handleChange} ></input>
         <button className="sb" type="submit">set</button>
        </form> 
     
